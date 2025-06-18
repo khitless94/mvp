@@ -161,57 +161,63 @@ const LandingPage: React.FC = () => {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative pt-24 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
+      <section className="relative pt-20 pb-12 sm:pt-24 sm:pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
         <div className="container-responsive relative z-10">
-          <div className="text-center max-w-3xl mx-auto">
+          <div className="text-center max-w-4xl mx-auto px-4 sm:px-6">
             {/* Headline */}
-            <h1 className="text-responsive-xl font-bold text-gray-900 mb-6 leading-tight">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-gray-900 mb-6 leading-tight">
               Effortless Social Media
-              <br />
-              <span className="text-gradient-primary">Content Creation</span>
+              <br className="hidden sm:block" />
+              <span className="sm:inline block text-gradient-primary">Content Creation</span>
             </h1>
 
             {/* Subheadline */}
-            <p className="text-responsive-md text-gray-600 mb-8 leading-relaxed">
-              Transform your social media strategy with intelligent content creation.<br />
-              From idea to published post in minutes, not hours.<br />
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
+              Transform your social media strategy with intelligent content creation.
+              <br className="hidden sm:block" />
+              From idea to published post in minutes, not hours.
+              <br className="hidden sm:block" />
               Built for creators, marketers, and growing businesses.
             </p>
 
             {/* CTA Buttons */}
-            <div className="flex justify-center items-center mb-12">
-              <Button size="lg" className="btn-primary text-lg px-8 py-4" onClick={() => setShowWaitlistModal(true)}>
-                <Sparkles className="w-5 h-5 mr-2" />
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-4 mb-12">
+              <Button
+                size="lg"
+                className="btn-primary text-base sm:text-lg px-6 sm:px-8 py-3 sm:py-4 w-full sm:w-auto min-h-[48px]"
+                onClick={() => setShowWaitlistModal(true)}
+              >
+                <Sparkles className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
                 Join the Waitlist
               </Button>
             </div>
 
             {/* Social Proof */}
-            <div className="flex flex-wrap justify-center items-center gap-8 mb-16 text-sm text-gray-500">
+            <div className="flex flex-col sm:flex-row justify-center items-center gap-6 sm:gap-8 mb-16 text-sm text-gray-500">
               <div className="flex items-center space-x-2">
                 <div className="flex -space-x-1">
                   {[...Array(4)].map((_, i) => (
-                    <div key={i} className="w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full border-2 border-white"></div>
+                    <div key={i} className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full border-2 border-white"></div>
                   ))}
                 </div>
-                <span>Trusted by content creators worldwide</span>
+                <span className="text-xs sm:text-sm">Trusted by content creators worldwide</span>
               </div>
               <div className="flex items-center space-x-1">
                 <div className="flex space-x-1">
                   {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-yellow-400 text-yellow-400" />
+                    <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
-                <span>Highly rated platform</span>
+                <span className="text-xs sm:text-sm">Highly rated platform</span>
               </div>
             </div>
           </div>
 
           {/* Interactive Demo */}
-          <div className="max-w-6xl mx-auto mb-16">
-            <div className="text-center mb-8">
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">See ScribeSchedule in action</h3>
-              <p className="text-lg text-gray-600">Experience our intuitive dashboard and powerful features</p>
+          <div className="max-w-6xl mx-auto mb-12 sm:mb-16">
+            <div className="text-center mb-6 sm:mb-8 px-4">
+              <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-3 sm:mb-4">See ScribeSchedule in action</h3>
+              <p className="text-base sm:text-lg text-gray-600">Experience our intuitive dashboard and powerful features</p>
             </div>
 
             <div className="relative">
@@ -412,21 +418,21 @@ const LandingPage: React.FC = () => {
           </div>
 
           {/* Trust Badges */}
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 sm:gap-8 mb-12 sm:mb-16 max-w-2xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-3 sm:gap-6 mb-12 sm:mb-16 max-w-3xl mx-auto px-4">
             {[
               { name: "Trustpilot", rating: "4.8/5" },
               { name: "Capterra", rating: "4.9/5" },
               { name: "G2", rating: "4.7/5" },
             ].map((badge, index) => (
-              <div key={index} className="flex flex-col sm:flex-row items-center justify-center sm:space-x-2 text-gray-600 bg-white/50 rounded-xl p-3 sm:p-4">
-                <div className="flex space-x-1 mb-1 sm:mb-0">
+              <div key={index} className="flex flex-col sm:flex-row items-center justify-center sm:space-x-2 text-gray-600 bg-white/60 backdrop-blur-sm rounded-xl p-4 sm:p-5 shadow-sm border border-white/40">
+                <div className="flex space-x-1 mb-2 sm:mb-0">
                   {[...Array(5)].map((_, i) => (
                     <Star key={i} className="w-3 h-3 sm:w-4 sm:h-4 fill-yellow-400 text-yellow-400" />
                   ))}
                 </div>
                 <div className="text-center sm:text-left">
-                  <span className="font-medium text-sm sm:text-base block sm:inline">{badge.name}</span>
-                  <span className="text-xs sm:text-sm text-gray-500 block sm:inline sm:ml-1">{badge.rating}</span>
+                  <span className="font-semibold text-sm sm:text-base block sm:inline text-gray-800">{badge.name}</span>
+                  <span className="text-xs sm:text-sm text-gray-600 block sm:inline sm:ml-1">{badge.rating}</span>
                 </div>
               </div>
             ))}
@@ -434,9 +440,9 @@ const LandingPage: React.FC = () => {
 
           {/* Company Logos */}
           <div className="text-center mb-12 sm:mb-16">
-            <p className="text-lg sm:text-xl text-gray-600 mb-6 sm:mb-8 font-medium px-4">Trusted by growing businesses worldwide</p>
-            <div className="overflow-x-auto">
-              <div className="flex items-center justify-center gap-6 sm:gap-8 lg:gap-12 min-w-max px-4 opacity-80 hover:opacity-100 transition-opacity duration-300">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 font-medium px-4">Trusted by growing businesses worldwide</p>
+            <div className="overflow-x-auto pb-4">
+              <div className="flex items-center justify-center gap-8 sm:gap-10 lg:gap-12 min-w-max px-4 opacity-80 hover:opacity-100 transition-opacity duration-300">
               {[
                 {
                   name: "Microsoft",
@@ -485,14 +491,14 @@ const LandingPage: React.FC = () => {
                   )
                 },
               ].map((company, index) => (
-                <div key={index} className="group text-center cursor-pointer transition-all duration-300 hover:scale-110 flex-shrink-0">
+                <div key={index} className="group text-center cursor-pointer transition-all duration-300 hover:scale-105 flex-shrink-0">
                   <div className="flex flex-col items-center">
-                    <div className="w-12 h-12 sm:w-14 sm:h-14 flex items-center justify-center">
+                    <div className="w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 flex items-center justify-center">
                       {React.cloneElement(company.logo, {
                         className: "w-full h-full"
                       })}
                     </div>
-                    <div className="text-xs sm:text-sm lg:text-base font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300 mt-2 sm:mt-3 whitespace-nowrap">
+                    <div className="text-xs sm:text-sm font-semibold text-gray-700 group-hover:text-gray-900 transition-colors duration-300 mt-2 whitespace-nowrap">
                       {company.name}
                     </div>
                   </div>
@@ -505,7 +511,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Main Features Section */}
-      <section id="features" className="py-4 lg:py-6 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
+      <section id="features" className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-gray-50 via-blue-50/30 to-purple-50/30 relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-10 w-32 h-32 bg-gradient-to-r from-blue-400 to-purple-400 rounded-full blur-3xl"></div>
@@ -513,26 +519,26 @@ const LandingPage: React.FC = () => {
         </div>
 
         <div className="container-responsive relative z-10">
-          <div className="text-center mb-12">
-            <div className="flex flex-col sm:flex-row items-center justify-center mb-4 space-y-4 sm:space-y-0">
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center mb-6 space-y-4 sm:space-y-0">
               <div className="relative">
-                <span className="text-4xl sm:text-6xl animate-bounce">👋</span>
-                <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
+                <span className="text-3xl sm:text-4xl lg:text-6xl animate-bounce">👋</span>
+                <div className="absolute -top-1 -right-1 sm:-top-2 sm:-right-2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-r from-yellow-400 to-orange-500 rounded-full animate-pulse"></div>
               </div>
-              <div className="sm:ml-6">
-                <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
+              <div className="sm:ml-6 text-center sm:text-left">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl xl:text-5xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-purple-900 bg-clip-text text-transparent">
                   Create social media content. Effortlessly.
                 </h2>
-                <div className="h-1.5 w-32 sm:w-40 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mt-3 mx-auto animate-pulse"></div>
+                <div className="h-1 sm:h-1.5 w-24 sm:w-32 lg:w-40 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 rounded-full mt-3 mx-auto sm:mx-0 animate-pulse"></div>
               </div>
             </div>
-            <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed px-4">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed px-4">
               Everything you need to create, manage, and grow your social media presence
               from one <span className="font-semibold text-transparent bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text">intuitive dashboard</span>.
             </p>
           </div>
 
-          <div className="grid lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
             {[
               {
                 icon: Wand2,
@@ -595,28 +601,30 @@ const LandingPage: React.FC = () => {
                 )
               }
             ].map((feature, index) => (
-              <div key={index} className={`group relative p-8 rounded-3xl bg-gradient-to-br ${feature.bgGradient} border border-white/60 shadow-lg ${feature.hoverShadow} hover:shadow-2xl transition-all duration-500 hover:-translate-y-3 cursor-pointer backdrop-blur-sm`}>
+              <div key={index} className={`group relative p-6 sm:p-8 rounded-2xl sm:rounded-3xl bg-gradient-to-br ${feature.bgGradient} border border-white/60 shadow-lg ${feature.hoverShadow} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 sm:hover:-translate-y-3 cursor-pointer backdrop-blur-sm`}>
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 {/* Animated border */}
-                <div className={`absolute inset-0 rounded-3xl bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`}></div>
+                <div className={`absolute inset-0 rounded-2xl sm:rounded-3xl bg-gradient-to-r ${feature.gradient} opacity-0 group-hover:opacity-20 transition-opacity duration-300 blur-sm`}></div>
 
                 <div className="relative z-10 text-center">
-                  <div className={`w-20 h-20 ${feature.iconBg} rounded-3xl flex items-center justify-center mx-auto mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl relative overflow-hidden`}>
+                  <div className={`w-16 h-16 sm:w-20 sm:h-20 ${feature.iconBg} rounded-2xl sm:rounded-3xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl relative overflow-hidden`}>
                     <div className="flex items-center justify-center w-full h-full">
-                      {feature.logo}
+                      {React.cloneElement(feature.logo, {
+                        className: "w-6 h-6 sm:w-8 sm:h-8 text-current"
+                      })}
                     </div>
                   </div>
-                  <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-gray-800 transition-colors duration-300">
+                  <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-3 sm:mb-4 group-hover:text-gray-800 transition-colors duration-300">
                     {feature.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                  <p className="text-sm sm:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                     {feature.description}
                   </p>
 
                   {/* Bottom accent line */}
-                  <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${feature.gradient} rounded-full group-hover:w-20 transition-all duration-500`}></div>
+                  <div className={`absolute bottom-0 left-1/2 transform -translate-x-1/2 w-0 h-1 bg-gradient-to-r ${feature.gradient} rounded-full group-hover:w-16 sm:group-hover:w-20 transition-all duration-500`}></div>
                 </div>
               </div>
             ))}
@@ -647,23 +655,23 @@ const LandingPage: React.FC = () => {
                 Our AI assistant helps you generate compelling marketing text for social media posts and blogs in multiple languages and tones.
               </p>
               <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/40 shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="w-8 h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
-                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="flex items-start space-x-4 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/40 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-green-400 to-emerald-500 rounded-full flex items-center justify-center shadow-lg flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
-                  <span className="text-sm sm:text-base text-gray-800 font-medium">Multiple content tones and styles</span>
+                  <span className="text-sm sm:text-base text-gray-800 font-medium leading-relaxed">Multiple content tones and styles</span>
                 </div>
-                <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/40 shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="w-8 h-8 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
-                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="flex items-start space-x-4 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/40 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-blue-400 to-indigo-500 rounded-full flex items-center justify-center shadow-lg flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
-                  <span className="text-sm sm:text-base text-gray-800 font-medium">Platform-specific optimization</span>
+                  <span className="text-sm sm:text-base text-gray-800 font-medium leading-relaxed">Platform-specific optimization</span>
                 </div>
-                <div className="flex items-center space-x-3 sm:space-x-4 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/40 shadow-sm hover:shadow-md transition-all duration-300">
-                  <div className="w-8 h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center shadow-lg flex-shrink-0">
-                    <Check className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
+                <div className="flex items-start space-x-4 p-3 sm:p-4 bg-white/60 backdrop-blur-sm rounded-xl border border-white/40 shadow-sm hover:shadow-md transition-all duration-300">
+                  <div className="w-6 h-6 sm:w-8 sm:h-8 bg-gradient-to-r from-purple-400 to-pink-500 rounded-full flex items-center justify-center shadow-lg flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-white" />
                   </div>
-                  <span className="text-sm sm:text-base text-gray-800 font-medium">Hashtag and caption generation</span>
+                  <span className="text-sm sm:text-base text-gray-800 font-medium leading-relaxed">Hashtag and caption generation</span>
                 </div>
               </div>
               <Button
@@ -718,7 +726,7 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Platform Integrations */}
-      <section className="py-16 lg:py-24 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 relative overflow-hidden">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gradient-to-br from-slate-50 via-blue-50/30 to-indigo-50/50 relative overflow-hidden">
         {/* Background decorations */}
         <div className="absolute inset-0 opacity-10">
           <div className="absolute top-20 left-20 w-24 h-24 bg-gradient-to-r from-blue-400 to-indigo-400 rounded-full blur-2xl animate-pulse"></div>
@@ -726,21 +734,21 @@ const LandingPage: React.FC = () => {
         </div>
 
         <div className="container-responsive relative z-10">
-          <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center shadow-lg mr-4">
-                <span className="text-3xl">🔗</span>
+          <div className="text-center mb-12 sm:mb-16">
+            <div className="flex flex-col sm:flex-row items-center justify-center mb-6 space-y-4 sm:space-y-0">
+              <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-r from-blue-500 to-indigo-600 rounded-xl sm:rounded-2xl flex items-center justify-center shadow-lg sm:mr-4">
+                <span className="text-2xl sm:text-3xl">🔗</span>
               </div>
-              <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 via-blue-900 to-indigo-900 bg-clip-text text-transparent text-center sm:text-left">
                 Connect to 5 major platforms
               </h2>
             </div>
-            <p className="text-xl text-gray-700 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-700 max-w-3xl mx-auto leading-relaxed px-4">
               Publish your content across the most important social media platforms with one click.
             </p>
           </div>
 
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-8 max-w-5xl mx-auto">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6 lg:gap-8 max-w-5xl mx-auto">
             {[
               {
                 icon: Facebook,
@@ -783,28 +791,28 @@ const LandingPage: React.FC = () => {
                 shadowColor: "hover:shadow-orange-200/50"
               },
             ].map((platform, index) => (
-              <div key={index} className={`group relative p-8 text-center bg-gradient-to-br ${platform.bgColor} ${platform.hoverColor} rounded-2xl border border-white/60 shadow-lg ${platform.shadowColor} hover:shadow-2xl transition-all duration-500 hover:-translate-y-2 cursor-pointer backdrop-blur-sm`}>
+              <div key={index} className={`group relative p-4 sm:p-6 lg:p-8 text-center bg-gradient-to-br ${platform.bgColor} ${platform.hoverColor} rounded-xl sm:rounded-2xl border border-white/60 shadow-lg ${platform.shadowColor} hover:shadow-2xl transition-all duration-500 hover:-translate-y-1 sm:hover:-translate-y-2 cursor-pointer backdrop-blur-sm`}>
                 {/* Hover overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-white/30 to-transparent rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 
                 <div className="relative z-10">
-                  <div className="w-16 h-16 bg-white rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl border border-gray-100">
-                    <platform.icon className={`w-8 h-8 ${platform.color} group-hover:scale-110 transition-transform duration-300`} />
+                  <div className="w-12 h-12 sm:w-14 sm:h-14 lg:w-16 lg:h-16 bg-white rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:scale-110 transition-transform duration-300 shadow-lg group-hover:shadow-xl border border-gray-100">
+                    <platform.icon className={`w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8 ${platform.color} group-hover:scale-110 transition-transform duration-300`} />
                   </div>
-                  <h4 className="font-bold text-gray-900 text-base group-hover:text-gray-800 transition-colors duration-300">{platform.name}</h4>
+                  <h4 className="font-bold text-gray-900 text-sm sm:text-base group-hover:text-gray-800 transition-colors duration-300">{platform.name}</h4>
 
                   {/* Connection indicator */}
-                  <div className="absolute top-3 right-3 w-3 h-3 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
+                  <div className="absolute top-2 right-2 sm:top-3 sm:right-3 w-2 h-2 sm:w-3 sm:h-3 bg-green-400 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></div>
                 </div>
               </div>
             ))}
           </div>
 
           {/* Connection status */}
-          <div className="text-center mt-12">
-            <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-6 py-3 border border-gray-200 shadow-lg">
+          <div className="text-center mt-8 sm:mt-12">
+            <div className="inline-flex items-center space-x-2 bg-white/80 backdrop-blur-sm rounded-full px-4 sm:px-6 py-2 sm:py-3 border border-gray-200 shadow-lg">
               <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
-              <span className="text-sm font-medium text-gray-700">All platforms ready to connect</span>
+              <span className="text-xs sm:text-sm font-medium text-gray-700">All platforms ready to connect</span>
             </div>
           </div>
         </div>
@@ -906,18 +914,18 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* ROI Section */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="container-responsive">
-          <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
-              <span className="text-4xl">🎉</span> Results, Fast.
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
+              <span className="text-2xl sm:text-3xl lg:text-4xl">🎉</span> Results, Fast.
             </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
               Experience the power of intelligent social media management. Here's what makes us different.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {[
               {
                 icon: Image,
@@ -962,12 +970,12 @@ const LandingPage: React.FC = () => {
                 bgColor: "bg-yellow-50"
               }
             ].map((feature, index) => (
-              <div key={index} className="text-center group hover:scale-105 transition-transform duration-300">
-                <div className={`w-16 h-16 ${feature.bgColor} rounded-2xl flex items-center justify-center mx-auto mb-4 group-hover:shadow-lg transition-shadow duration-300`}>
-                  <feature.icon className={`w-8 h-8 ${feature.color} group-hover:scale-110 transition-transform duration-300`} />
+              <div key={index} className="text-center group hover:scale-105 transition-transform duration-300 p-4 sm:p-6">
+                <div className={`w-12 h-12 sm:w-16 sm:h-16 ${feature.bgColor} rounded-xl sm:rounded-2xl flex items-center justify-center mx-auto mb-3 sm:mb-4 group-hover:shadow-lg transition-shadow duration-300`}>
+                  <feature.icon className={`w-6 h-6 sm:w-8 sm:h-8 ${feature.color} group-hover:scale-110 transition-transform duration-300`} />
                 </div>
-                <h3 className="text-lg font-bold text-gray-900 mb-3 group-hover:text-gray-800 transition-colors duration-300">{feature.title}</h3>
-                <p className="text-gray-600 text-sm leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{feature.description}</p>
+                <h3 className="text-base sm:text-lg font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-gray-800 transition-colors duration-300">{feature.title}</h3>
+                <p className="text-gray-600 text-sm sm:text-base leading-relaxed group-hover:text-gray-700 transition-colors duration-300">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -975,62 +983,62 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* AI Caption Generation */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container-responsive">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="relative">
-              <div className="bg-white rounded-2xl shadow-xl border border-gray-200 p-8">
-                <div className="flex items-center space-x-3 mb-6">
-                  <div className="w-10 h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
-                    <MessageSquare className="w-5 h-5 text-white" />
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="relative order-2 lg:order-1">
+              <div className="bg-white rounded-xl sm:rounded-2xl shadow-xl border border-gray-200 p-6 sm:p-8">
+                <div className="flex items-center space-x-3 mb-4 sm:mb-6">
+                  <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-green-500 to-blue-500 rounded-full flex items-center justify-center">
+                    <MessageSquare className="w-4 h-4 sm:w-5 sm:h-5 text-white" />
                   </div>
-                  <span className="font-bold text-lg">AI Caption Generator</span>
+                  <span className="font-bold text-base sm:text-lg">AI Caption Generator</span>
                 </div>
-                <div className="space-y-4">
-                  <div className="bg-gray-50 rounded-lg p-4">
-                    <div className="text-sm text-gray-600 mb-2">Input:</div>
-                    <div className="text-gray-900">"New product launch announcement"</div>
+                <div className="space-y-3 sm:space-y-4">
+                  <div className="bg-gray-50 rounded-lg p-3 sm:p-4">
+                    <div className="text-xs sm:text-sm text-gray-600 mb-2">Input:</div>
+                    <div className="text-sm sm:text-base text-gray-900">"New product launch announcement"</div>
                   </div>
-                  <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-4">
-                    <div className="text-sm text-gray-600 mb-2">Generated Caption:</div>
-                    <div className="text-gray-900 mb-3">
+                  <div className="bg-gradient-to-r from-green-50 to-blue-50 rounded-lg p-3 sm:p-4">
+                    <div className="text-xs sm:text-sm text-gray-600 mb-2">Generated Caption:</div>
+                    <div className="text-sm sm:text-base text-gray-900 mb-3">
                       "🚀 Big news is coming! We can't wait to share what we've been working on.
                       Get ready for something that will change the game! #Innovation #ComingSoon #Excited"
                     </div>
-                    <div className="flex flex-wrap gap-2">
-                      <Badge variant="secondary">#Innovation</Badge>
-                      <Badge variant="secondary">#ProductLaunch</Badge>
-                      <Badge variant="secondary">#Startup</Badge>
+                    <div className="flex flex-wrap gap-1 sm:gap-2">
+                      <Badge variant="secondary" className="text-xs">#Innovation</Badge>
+                      <Badge variant="secondary" className="text-xs">#ProductLaunch</Badge>
+                      <Badge variant="secondary" className="text-xs">#Startup</Badge>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+            <div className="order-1 lg:order-2">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Captions, hashtags? AI-generated.
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8">
                 Create compelling captions, generate relevant hashtags, and write engaging copy. All powered by your simple description.
               </p>
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-green-600" />
+              <div className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
+                <div className="flex items-start space-x-4">
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                   </div>
-                  <span className="text-gray-700">AI copywriter for all platforms</span>
+                  <span className="text-sm sm:text-base text-gray-700 leading-relaxed">AI copywriter for all platforms</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-green-600" />
+                <div className="flex items-start space-x-4">
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                   </div>
-                  <span className="text-gray-700">Inspirational quotes and content</span>
+                  <span className="text-sm sm:text-base text-gray-700 leading-relaxed">Inspirational quotes and content</span>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <div className="w-6 h-6 bg-green-100 rounded-full flex items-center justify-center">
-                    <Check className="w-4 h-4 text-green-600" />
+                <div className="flex items-start space-x-4">
+                  <div className="w-6 h-6 sm:w-6 sm:h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5">
+                    <Check className="w-3 h-3 sm:w-4 sm:h-4 text-green-600" />
                   </div>
-                  <span className="text-gray-700">Smart hashtag suggestions</span>
+                  <span className="text-sm sm:text-base text-gray-700 leading-relaxed">Smart hashtag suggestions</span>
                 </div>
               </div>
             </div>
@@ -1039,49 +1047,51 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Pricing Section */}
-      <section id="pricing" className="py-16 lg:py-24 bg-gray-50">
+      <section id="pricing" className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="container-responsive">
-          <div className="text-center mb-16">
-            <h2 className="text-responsive-lg font-bold text-gray-900 mb-4">Choose your plan</h2>
-            <p className="text-lg text-gray-600 mb-8">Simple, transparent pricing for creators and businesses</p>
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Choose your plan</h2>
+            <p className="text-base sm:text-lg text-gray-600 mb-6 sm:mb-8 px-4">Simple, transparent pricing for creators and businesses</p>
 
             {/* Billing Toggle */}
-            <div className="flex items-center justify-center space-x-4 mb-8">
-              <Label
-                className={`text-sm font-medium cursor-pointer transition-colors ${!isYearly ? 'text-gray-900 font-semibold' : 'text-gray-600'}`}
-                onClick={() => handleYearlyToggle(false)}
-              >
-                Monthly
-              </Label>
+            <div className="flex flex-col sm:flex-row items-center justify-center space-y-4 sm:space-y-0 sm:space-x-4 mb-6 sm:mb-8">
+              <div className="flex items-center space-x-3 sm:space-x-4">
+                <Label
+                  className={`text-sm font-medium cursor-pointer transition-colors ${!isYearly ? 'text-gray-900 font-semibold' : 'text-gray-600'}`}
+                  onClick={() => handleYearlyToggle(false)}
+                >
+                  Monthly
+                </Label>
 
-              {/* Custom Toggle */}
-              <div
-                className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors cursor-pointer"
-                style={{
-                  backgroundColor: isYearly ? '#667eea' : '#e5e7eb'
-                }}
-                onClick={handleToggleClick}
-              >
-                <span
-                  className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
-                    isYearly ? 'translate-x-6' : 'translate-x-1'
-                  }`}
-                />
+                {/* Custom Toggle */}
+                <div
+                  className="relative inline-flex h-6 w-11 items-center rounded-full bg-gray-200 transition-colors cursor-pointer"
+                  style={{
+                    backgroundColor: isYearly ? '#667eea' : '#e5e7eb'
+                  }}
+                  onClick={handleToggleClick}
+                >
+                  <span
+                    className={`inline-block h-4 w-4 transform rounded-full bg-white transition-transform ${
+                      isYearly ? 'translate-x-6' : 'translate-x-1'
+                    }`}
+                  />
+                </div>
+
+                <Label
+                  className={`text-sm font-medium cursor-pointer transition-colors ${isYearly ? 'text-gray-900 font-semibold' : 'text-gray-600'}`}
+                  onClick={() => handleYearlyToggle(true)}
+                >
+                  Yearly
+                </Label>
               </div>
-
-              <Label
-                className={`text-sm font-medium cursor-pointer transition-colors ${isYearly ? 'text-gray-900 font-semibold' : 'text-gray-600'}`}
-                onClick={() => handleYearlyToggle(true)}
-              >
-                Yearly
-              </Label>
-              <Badge className="bg-green-100 text-green-800 border-green-200 ml-2">
+              <Badge className="bg-green-100 text-green-800 border-green-200 mt-2 sm:mt-0 sm:ml-2">
                 Save 20%
               </Badge>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 max-w-5xl mx-auto">
             {[
               {
                 name: "Starter",
@@ -1106,28 +1116,27 @@ const LandingPage: React.FC = () => {
                 features: ["5 social platforms", "Unlimited posts", "Team collaboration", "Priority support"]
               }
             ].map((plan, index) => (
-              <div key={index} className={`card-modern p-8 text-center relative ${plan.popular ? 'ring-2 ring-blue-500' : ''}`}>
+              <div key={index} className={`card-modern p-6 sm:p-8 text-center relative ${plan.popular ? 'ring-2 ring-blue-500 scale-105' : ''}`}>
                 {plan.popular && (
                   <div className="absolute -top-3 left-1/2 transform -translate-x-1/2">
-                    <Badge className="bg-blue-500 text-white px-4 py-1">Most Popular</Badge>
+                    <Badge className="bg-blue-500 text-white px-3 sm:px-4 py-1 text-xs sm:text-sm">Most Popular</Badge>
                   </div>
                 )}
-                <h3 className="text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
-                <p className="text-gray-600 mb-4">{plan.description}</p>
-                <div className="text-4xl font-bold text-gray-900 mb-6">
+                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 mb-2">{plan.name}</h3>
+                <p className="text-sm sm:text-base text-gray-600 mb-4">{plan.description}</p>
+                <div className="text-3xl sm:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                   ${isYearly ? plan.yearlyPrice : plan.monthlyPrice}
-                  <span className="text-lg text-gray-500 font-normal">/{isYearly ? 'year' : 'month'}</span>
+                  <span className="text-base sm:text-lg text-gray-500 font-normal">/{isYearly ? 'year' : 'month'}</span>
                 </div>
-                <ul className="space-y-3 mb-8">
+                <ul className="space-y-3 sm:space-y-4 mb-6 sm:mb-8">
                   {plan.features.map((feature, idx) => (
-                    <li key={idx} className="flex items-center justify-center space-x-2">
-                      <Check className="w-5 h-5 text-green-500" />
-                      <span className="text-gray-600">{feature}</span>
+                    <li key={idx} className="text-center">
+                      <span className="text-sm sm:text-base text-gray-600">{feature}</span>
                     </li>
                   ))}
                 </ul>
                 <Button
-                  className="w-full btn-primary"
+                  className="w-full btn-primary min-h-[44px]"
                   onClick={() => setShowWaitlistModal(true)}
                 >
                   Join Waitlist
@@ -1139,19 +1148,19 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Scheduling Section */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container-responsive">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div>
-              <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
                 Schedule across platforms. For your team too.
               </h2>
-              <p className="text-xl text-gray-600 mb-8">
+              <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8">
                 Collaborate with team members or clients to plan and review campaigns together. Perfect for agencies and growing businesses.
               </p>
-              <div className="mb-8">
-                <h4 className="font-semibold text-gray-900 mb-4">Supported Platforms:</h4>
-                <div className="flex flex-wrap gap-3">
+              <div className="mb-6 sm:mb-8">
+                <h4 className="font-semibold text-gray-900 mb-3 sm:mb-4 text-sm sm:text-base">Supported Platforms:</h4>
+                <div className="flex flex-wrap gap-2 sm:gap-3">
                   {[
                     { icon: Facebook, color: "text-blue-600" },
                     { icon: Instagram, color: "text-pink-500" },
@@ -1159,43 +1168,43 @@ const LandingPage: React.FC = () => {
                     { icon: Linkedin, color: "text-blue-700" },
                     { icon: FaReddit, color: "text-orange-600" },
                   ].map((platform, index) => (
-                    <div key={index} className="w-10 h-10 bg-gray-100 rounded-lg flex items-center justify-center">
-                      <platform.icon className={`w-5 h-5 ${platform.color}`} />
+                    <div key={index} className="w-8 h-8 sm:w-10 sm:h-10 bg-gray-100 rounded-lg flex items-center justify-center">
+                      <platform.icon className={`w-4 h-4 sm:w-5 sm:h-5 ${platform.color}`} />
                     </div>
                   ))}
                 </div>
               </div>
               <Button
-                className="btn-primary"
+                className="btn-primary w-full sm:w-auto min-h-[44px]"
                 onClick={() => setShowWaitlistModal(true)}
               >
                 Join Waitlist
                 <ArrowRight className="w-4 h-4 ml-2" />
               </Button>
             </div>
-            <div className="relative max-w-xl mx-auto">
+            <div className="relative max-w-xl mx-auto order-1 lg:order-2">
               {/* Floating elements */}
-              <div className="absolute -top-2 -right-2 w-6 h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-bounce delay-300 opacity-80"></div>
-              <div className="absolute -bottom-2 -left-2 w-4 h-4 bg-gradient-to-r from-green-400 to-teal-500 rounded-full animate-bounce delay-700 opacity-80"></div>
+              <div className="absolute -top-2 -right-2 w-4 h-4 sm:w-6 sm:h-6 bg-gradient-to-r from-blue-400 to-purple-500 rounded-full animate-bounce delay-300 opacity-80"></div>
+              <div className="absolute -bottom-2 -left-2 w-3 h-3 sm:w-4 sm:h-4 bg-gradient-to-r from-green-400 to-teal-500 rounded-full animate-bounce delay-700 opacity-80"></div>
 
-              <div className="bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 rounded-2xl shadow-xl border border-white/60 p-10 backdrop-blur-sm relative overflow-hidden max-w-xl mx-auto">
+              <div className="bg-gradient-to-br from-white via-blue-50/30 to-purple-50/30 rounded-xl sm:rounded-2xl shadow-xl border border-white/60 p-6 sm:p-8 lg:p-10 backdrop-blur-sm relative overflow-hidden">
                 {/* Background gradient overlay */}
-                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 to-purple-50/20 rounded-2xl"></div>
+                <div className="absolute inset-0 bg-gradient-to-br from-blue-50/20 to-purple-50/20 rounded-xl sm:rounded-2xl"></div>
 
                 <div className="relative z-10">
                   {/* Calendar header */}
-                  <div className="flex items-center justify-between mb-4">
-                    <h3 className="text-lg font-bold text-gray-900">December 2024</h3>
+                  <div className="flex items-center justify-between mb-3 sm:mb-4">
+                    <h3 className="text-base sm:text-lg font-bold text-gray-900">December 2024</h3>
                     <div className="flex items-center space-x-1">
                       <div className="w-2 h-2 bg-blue-400 rounded-full animate-pulse"></div>
-                      <span className="text-sm text-gray-600 font-medium">Live</span>
+                      <span className="text-xs sm:text-sm text-gray-600 font-medium">Live</span>
                     </div>
                   </div>
 
-                  {/* Calendar grid - larger */}
-                  <div className="grid grid-cols-7 gap-3 mb-5">
+                  {/* Calendar grid */}
+                  <div className="grid grid-cols-7 gap-1 sm:gap-2 lg:gap-3 mb-4 sm:mb-5">
                     {['S', 'M', 'T', 'W', 'T', 'F', 'S'].map((day) => (
-                      <div key={day} className="text-base font-bold text-gray-600 text-center py-4 bg-gray-50 rounded-lg">
+                      <div key={day} className="text-xs sm:text-sm lg:text-base font-bold text-gray-600 text-center py-2 sm:py-3 lg:py-4 bg-gray-50 rounded-md sm:rounded-lg">
                         {day}
                       </div>
                     ))}
@@ -1206,7 +1215,7 @@ const LandingPage: React.FC = () => {
                       const isWeekend = i % 7 === 0 || i % 7 === 6;
 
                       return (
-                        <div key={i} className={`aspect-square flex items-center justify-center text-sm rounded-lg font-medium transition-all duration-300 cursor-pointer relative ${
+                        <div key={i} className={`aspect-square flex items-center justify-center text-xs sm:text-sm rounded-md sm:rounded-lg font-medium transition-all duration-300 cursor-pointer relative ${
                           isToday
                             ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-md' :
                           hasEvent
@@ -1217,32 +1226,32 @@ const LandingPage: React.FC = () => {
                         }`}>
                           {dayNumber}
                           {hasEvent && (
-                            <div className="absolute bottom-1 w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                            <div className="absolute bottom-0.5 sm:bottom-1 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-green-400 rounded-full animate-pulse"></div>
                           )}
                         </div>
                       );
                     })}
                   </div>
 
-                  {/* Scheduled posts - compact */}
+                  {/* Scheduled posts */}
                   <div className="space-y-2">
-                    <h4 className="text-xs font-bold text-gray-900 flex items-center">
+                    <h4 className="text-xs sm:text-sm font-bold text-gray-900 flex items-center">
                       <Calendar className="w-3 h-3 mr-1 text-blue-500" />
                       Upcoming Posts
                     </h4>
                     <div className="space-y-2">
-                      <div className="flex items-center space-x-2 p-2 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
-                        <div className="w-6 h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                          <Instagram className="w-3 h-3 text-white" />
+                      <div className="flex items-center space-x-2 p-2 sm:p-3 bg-gradient-to-r from-blue-50 to-purple-50 rounded-lg border border-blue-100">
+                        <div className="w-5 h-5 sm:w-6 sm:h-6 bg-gradient-to-r from-blue-500 to-purple-600 rounded-lg flex items-center justify-center flex-shrink-0">
+                          <Instagram className="w-2.5 h-2.5 sm:w-3 sm:h-3 text-white" />
                         </div>
                         <div className="flex-1 min-w-0">
-                          <div className="text-xs font-bold text-gray-900 truncate">Product Launch</div>
+                          <div className="text-xs sm:text-sm font-bold text-gray-900 truncate">Product Launch</div>
                           <div className="text-xs text-gray-600 flex items-center">
                             <Clock className="w-2 h-2 mr-1" />
                             3:30 PM
                           </div>
                         </div>
-                        <Badge className="bg-green-500 text-white text-xs px-2 py-0.5">
+                        <Badge className="bg-green-500 text-white text-xs px-1.5 sm:px-2 py-0.5">
                           Ready
                         </Badge>
                       </div>
@@ -1256,42 +1265,42 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Awards and Recognition */}
-      <section className="py-16 lg:py-24 bg-gray-50">
+      <section className="py-12 sm:py-16 lg:py-20 bg-gray-50">
         <div className="container-responsive">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="grid grid-cols-2 gap-4">
+          <div className="grid lg:grid-cols-2 gap-8 sm:gap-12 lg:gap-16 items-center">
+            <div className="grid grid-cols-2 gap-3 sm:gap-4 order-2 lg:order-1">
               {[
                 { title: "Best Social Media Tool", year: "2024", category: "Startup Awards" },
                 { title: "Top Performer", year: "2024", category: "G2 Reviews" },
                 { title: "Rising Star", year: "2024", category: "Product Hunt" },
                 { title: "User's Choice", year: "2024", category: "Capterra" },
               ].map((award, index) => (
-                <div key={index} className="bg-white rounded-xl p-6 text-center shadow-sm">
-                  <div className="w-12 h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-3">
-                    <Star className="w-6 h-6 text-white" />
+                <div key={index} className="bg-white rounded-lg sm:rounded-xl p-4 sm:p-6 text-center shadow-sm">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-gradient-to-r from-yellow-400 to-orange-400 rounded-full flex items-center justify-center mx-auto mb-2 sm:mb-3">
+                    <Star className="w-5 h-5 sm:w-6 sm:h-6 text-white" />
                   </div>
-                  <div className="text-sm font-bold text-gray-900">{award.title}</div>
-                  <div className="text-xs text-gray-500">{award.category}</div>
+                  <div className="text-xs sm:text-sm font-bold text-gray-900 leading-tight">{award.title}</div>
+                  <div className="text-xs text-gray-500 mt-1">{award.category}</div>
                   <div className="text-xs text-gray-400">{award.year}</div>
                 </div>
               ))}
             </div>
-            <div>
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center">
-                  <Users className="w-6 h-6 text-blue-600" />
+            <div className="order-1 lg:order-2">
+              <div className="flex flex-col sm:flex-row items-start sm:items-center space-y-3 sm:space-y-0 sm:space-x-3 mb-4 sm:mb-6">
+                <div className="w-10 h-10 sm:w-12 sm:h-12 bg-blue-100 rounded-full flex items-center justify-center flex-shrink-0">
+                  <Users className="w-5 h-5 sm:w-6 sm:h-6 text-blue-600" />
                 </div>
                 <div>
-                  <div className="font-bold text-gray-900">Sarah Johnson</div>
-                  <div className="text-sm text-gray-600">Marketing Director, TechStart</div>
+                  <div className="font-bold text-gray-900 text-sm sm:text-base">Sarah Johnson</div>
+                  <div className="text-xs sm:text-sm text-gray-600">Marketing Director, TechStart</div>
                 </div>
               </div>
-              <blockquote className="text-lg text-gray-700 mb-6">
+              <blockquote className="text-base sm:text-lg text-gray-700 mb-4 sm:mb-6 leading-relaxed">
                 "ScribeSchedule transformed our social media workflow. The AI content generation saves us hours every week, and the scheduling features are incredibly intuitive."
               </blockquote>
-              <div className="flex space-x-1 mb-6">
+              <div className="flex space-x-1 mb-4 sm:mb-6">
                 {[...Array(5)].map((_, i) => (
-                  <Star key={i} className="w-5 h-5 fill-yellow-400 text-yellow-400" />
+                  <Star key={i} className="w-4 h-4 sm:w-5 sm:h-5 fill-yellow-400 text-yellow-400" />
                 ))}
               </div>
             </div>
@@ -1300,16 +1309,20 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-16 lg:py-24">
+      <section className="py-12 sm:py-16 lg:py-20">
         <div className="container-responsive">
-          <div className="text-center">
-            <h2 className="text-4xl font-bold text-gray-900 mb-6">
+          <div className="text-center px-4">
+            <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4 sm:mb-6">
               Join thousands of creators worldwide
             </h2>
-            <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
+            <p className="text-base sm:text-lg lg:text-xl text-gray-600 mb-6 sm:mb-8 max-w-3xl mx-auto">
               Start creating better social media content today. No credit card required.
             </p>
-            <Button size="lg" className="btn-primary text-lg px-12 py-4" onClick={() => setShowWaitlistModal(true)}>
+            <Button
+              size="lg"
+              className="btn-primary text-base sm:text-lg px-8 sm:px-12 py-3 sm:py-4 w-full sm:w-auto min-h-[48px]"
+              onClick={() => setShowWaitlistModal(true)}
+            >
               Join the Waitlist
             </Button>
           </div>
@@ -1317,67 +1330,67 @@ const LandingPage: React.FC = () => {
       </section>
 
       {/* Footer */}
-      <footer className="py-16 bg-gray-900 text-white">
+      <footer className="py-12 sm:py-16 bg-gray-900 text-white">
         <div className="container-responsive">
-          <div className="grid md:grid-cols-5 gap-8 mb-8">
-            <div className="md:col-span-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-6 sm:gap-8 mb-6 sm:mb-8">
+            <div className="sm:col-span-2 lg:col-span-2">
               <div className="flex items-center space-x-3 mb-4">
                 <div className="w-8 h-8 gradient-primary rounded-lg flex items-center justify-center">
                   <Sparkles className="w-5 h-5 text-white" />
                 </div>
-                <span className="text-xl font-bold">ScribeSchedule</span>
+                <span className="text-lg sm:text-xl font-bold">ScribeSchedule</span>
               </div>
-              <p className="text-gray-400 mb-6">
+              <p className="text-sm sm:text-base text-gray-400 mb-6 leading-relaxed">
                 Streamline your social media workflow with intelligent content creation, scheduling, and analytics tools designed for modern creators.
               </p>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Features</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Features</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#features" className="hover:text-white transition-colors">AI Content Creation</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Smart Scheduling</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Analytics Dashboard</a></li>
-                <li><a href="#features" className="hover:text-white transition-colors">Multi-Platform Posting</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors text-sm sm:text-base">AI Content Creation</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors text-sm sm:text-base">Smart Scheduling</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors text-sm sm:text-base">Analytics Dashboard</a></li>
+                <li><a href="#features" className="hover:text-white transition-colors text-sm sm:text-base">Multi-Platform Posting</a></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Platforms</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Platforms</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><span className="text-gray-400">Facebook</span></li>
-                <li><span className="text-gray-400">Instagram</span></li>
-                <li><span className="text-gray-400">Twitter</span></li>
-                <li><span className="text-gray-400">LinkedIn</span></li>
-                <li><span className="text-gray-400">Reddit</span></li>
+                <li><span className="text-gray-400 text-sm sm:text-base">Facebook</span></li>
+                <li><span className="text-gray-400 text-sm sm:text-base">Instagram</span></li>
+                <li><span className="text-gray-400 text-sm sm:text-base">Twitter</span></li>
+                <li><span className="text-gray-400 text-sm sm:text-base">LinkedIn</span></li>
+                <li><span className="text-gray-400 text-sm sm:text-base">Reddit</span></li>
               </ul>
             </div>
 
             <div>
-              <h4 className="font-semibold mb-4">Support</h4>
+              <h4 className="font-semibold mb-3 sm:mb-4 text-sm sm:text-base">Support</h4>
               <ul className="space-y-2 text-gray-400">
-                <li><a href="#pricing" className="hover:text-white transition-colors">Pricing</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Terms of Service</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Privacy Policy</a></li>
-                <li><a href="#" className="hover:text-white transition-colors">Contact Us</a></li>
+                <li><a href="#pricing" className="hover:text-white transition-colors text-sm sm:text-base">Pricing</a></li>
+                <li><a href="#" className="hover:text-white transition-colors text-sm sm:text-base">Terms of Service</a></li>
+                <li><a href="#" className="hover:text-white transition-colors text-sm sm:text-base">Privacy Policy</a></li>
+                <li><a href="#" className="hover:text-white transition-colors text-sm sm:text-base">Contact Us</a></li>
               </ul>
             </div>
           </div>
 
-          <div className="border-t border-gray-800 pt-8 flex flex-col md:flex-row justify-between items-center">
-            <p className="text-gray-400">© 2024 ScribeSchedule. All rights reserved. Terms of Service and Privacy Policy apply.</p>
-            <div className="flex space-x-6 mt-4 md:mt-0">
+          <div className="border-t border-gray-800 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+            <p className="text-xs sm:text-sm text-gray-400 text-center md:text-left">© 2024 ScribeSchedule. All rights reserved. Terms of Service and Privacy Policy apply.</p>
+            <div className="flex space-x-4 sm:space-x-6">
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Twitter className="w-5 h-5" />
+                <Twitter className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Facebook className="w-5 h-5" />
+                <Facebook className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Linkedin className="w-5 h-5" />
+                <Linkedin className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
               <a href="#" className="text-gray-400 hover:text-white transition-colors">
-                <Instagram className="w-5 h-5" />
+                <Instagram className="w-4 h-4 sm:w-5 sm:h-5" />
               </a>
             </div>
           </div>

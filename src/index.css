@@ -197,6 +197,23 @@ button,
   .mobile-card {
     @apply bg-white rounded-xl shadow-sm border border-gray-100 touch-spacing;
   }
+
+  /* Consistent checkmark alignment */
+  .check-item {
+    @apply flex items-start space-x-4;
+  }
+
+  .check-icon {
+    @apply w-6 h-6 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5;
+  }
+
+  .check-icon-sm {
+    @apply w-5 h-5 bg-green-100 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5;
+  }
+
+  .check-text {
+    @apply text-sm sm:text-base text-gray-700 leading-relaxed;
+  }
 }
 
 /* Smooth scrolling for better mobile experience */
