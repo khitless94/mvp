@@ -14,9 +14,46 @@ interface WaitlistModalProps {
 }
 
 const countries = [
-  'United States', 'Canada', 'United Kingdom', 'Australia', 'Germany', 'France', 'Spain', 'Italy', 'Netherlands', 'Sweden',
-  'Norway', 'Denmark', 'Finland', 'Switzerland', 'Austria', 'Belgium', 'Ireland', 'Portugal', 'Japan', 'South Korea',
-  'Singapore', 'New Zealand', 'India', 'Brazil', 'Mexico', 'Argentina', 'Chile', 'Colombia', 'South Africa', 'Other'
+  { name: 'United States', flag: '🇺🇸' },
+  { name: 'Canada', flag: '🇨🇦' },
+  { name: 'United Kingdom', flag: '🇬🇧' },
+  { name: 'Australia', flag: '🇦🇺' },
+  { name: 'Germany', flag: '🇩🇪' },
+  { name: 'France', flag: '🇫🇷' },
+  { name: 'Spain', flag: '🇪🇸' },
+  { name: 'Italy', flag: '🇮🇹' },
+  { name: 'Netherlands', flag: '🇳🇱' },
+  { name: 'Sweden', flag: '🇸🇪' },
+  { name: 'Norway', flag: '🇳🇴' },
+  { name: 'Denmark', flag: '🇩🇰' },
+  { name: 'Finland', flag: '🇫🇮' },
+  { name: 'Switzerland', flag: '🇨🇭' },
+  { name: 'Austria', flag: '🇦🇹' },
+  { name: 'Belgium', flag: '🇧🇪' },
+  { name: 'Ireland', flag: '🇮🇪' },
+  { name: 'Portugal', flag: '🇵🇹' },
+  { name: 'Japan', flag: '🇯🇵' },
+  { name: 'South Korea', flag: '🇰🇷' },
+  { name: 'Singapore', flag: '🇸🇬' },
+  { name: 'New Zealand', flag: '🇳🇿' },
+  { name: 'India', flag: '🇮🇳' },
+  { name: 'Brazil', flag: '🇧🇷' },
+  { name: 'Mexico', flag: '🇲🇽' },
+  { name: 'Argentina', flag: '🇦🇷' },
+  { name: 'Chile', flag: '🇨🇱' },
+  { name: 'Colombia', flag: '🇨🇴' },
+  { name: 'South Africa', flag: '🇿🇦' },
+  { name: 'China', flag: '🇨🇳' },
+  { name: 'Russia', flag: '🇷🇺' },
+  { name: 'Turkey', flag: '🇹🇷' },
+  { name: 'Israel', flag: '🇮🇱' },
+  { name: 'United Arab Emirates', flag: '🇦🇪' },
+  { name: 'Saudi Arabia', flag: '🇸🇦' },
+  { name: 'Egypt', flag: '🇪🇬' },
+  { name: 'Nigeria', flag: '🇳🇬' },
+  { name: 'Kenya', flag: '🇰🇪' },
+  { name: 'Ghana', flag: '🇬🇭' },
+  { name: 'Other', flag: '🌍' }
 ];
 
 const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
@@ -147,12 +184,22 @@ const WaitlistModal: React.FC<WaitlistModalProps> = ({ isOpen, onClose }) => {
             <Label htmlFor="country">Country</Label>
             <Select value={country} onValueChange={setCountry} required disabled={loading}>
               <SelectTrigger>
-                <SelectValue placeholder="Select your country" />
+                <SelectValue placeholder="Select your country">
+                  {country && (
+                    <div className="flex items-center space-x-2">
+                      <span className="text-lg">{countries.find(c => c.name === country)?.flag}</span>
+                      <span>{country}</span>
+                    </div>
+                  )}
+                </SelectValue>
               </SelectTrigger>
               <SelectContent>
-                {countries.map((countryName) => (
-                  <SelectItem key={countryName} value={countryName}>
-                    {countryName}
+                {countries.map((countryObj) => (
+                  <SelectItem key={countryObj.name} value={countryObj.name}>
+                    <div className="flex items-center space-x-2">
+                      <span className="text-lg">{countryObj.flag}</span>
+                      <span>{countryObj.name}</span>
+                    </div>
                   </SelectItem>
                 ))}
               </SelectContent>

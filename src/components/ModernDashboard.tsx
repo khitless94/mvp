@@ -231,14 +231,14 @@ const ModernDashboard = () => {
             </div>
 
             {/* Right Actions */}
-            <div className="flex items-center space-x-3">
-              <button className="relative p-2 rounded-xl hover:bg-gray-100 transition-colors">
+            <div className="flex items-center space-x-2 sm:space-x-3">
+              <button className="relative p-2 rounded-xl hover:bg-gray-100 transition-colors touch-target">
                 <Bell className="h-5 w-5 text-gray-600" />
                 <span className="absolute -top-1 -right-1 w-3 h-3 bg-red-500 rounded-full"></span>
               </button>
 
               <div className="flex items-center space-x-2">
-                <div className="w-8 h-8 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
+                <div className="w-8 h-8 sm:w-10 sm:h-10 bg-gradient-to-r from-blue-500 to-purple-600 rounded-full flex items-center justify-center">
                   <span className="text-white text-sm font-medium">
                     {user?.email?.charAt(0).toUpperCase() || 'U'}
                   </span>
@@ -275,7 +275,7 @@ const ModernDashboard = () => {
             <div className="p-4 border-b border-gray-200/50">
               <Button
                 onClick={() => setShowCreateModal(true)}
-                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-xl font-medium transition-all shadow-lg hover:shadow-xl"
+                className="w-full bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white rounded-xl font-medium transition-all shadow-lg hover:shadow-xl touch-target"
               >
                 <Plus className="h-4 w-4 mr-2" />
                 Create Post
@@ -324,8 +324,8 @@ const ModernDashboard = () => {
         </aside>
 
         {/* Main Content */}
-        <main className="flex-1 lg:ml-0">
-          <div className="max-w-7xl mx-auto p-6 space-y-8">
+        <main className="flex-1 lg:ml-0 smooth-scroll">
+          <div className="max-w-7xl mx-auto p-4 sm:p-6 space-y-6 sm:space-y-8 pb-20 lg:pb-6">
 
             {/* Overview Tab */}
             {activeTab === "overview" && (
@@ -377,7 +377,7 @@ const ModernDashboard = () => {
                 </div>
 
                 {/* Stats Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
                   {stats.map((stat, index) => {
                     const Icon = stat.icon;
                     return (
@@ -412,7 +412,7 @@ const ModernDashboard = () => {
                     <h3 className="text-xl font-bold text-gray-900">Quick Actions</h3>
                     <div className="text-sm text-gray-500">Choose your next move</div>
                   </div>
-                  <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
+                  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
                     {quickActions.map((action, index) => {
                       const Icon = action.icon;
                       return (
@@ -555,6 +555,48 @@ const ModernDashboard = () => {
             {activeTab === "settings" && <SettingsPage />}
           </div>
         </main>
+      </div>
+
+      {/* Mobile Bottom Navigation */}
+      <div className="fixed bottom-0 left-0 right-0 bg-white/95 backdrop-blur-xl border-t border-gray-200 lg:hidden z-50 safe-area-bottom">
+        <div className="grid grid-cols-5 gap-1 px-2 py-2">
+          {[
+            { id: "overview", label: "Home", icon: Home },
+            { id: "posts", label: "Posts", icon: FileText },
+            { id: "create", label: "Create", icon: Plus, special: true },
+            { id: "calendar", label: "Calendar", icon: Calendar },
+            { id: "analytics", label: "Analytics", icon: BarChart3 }
+          ].map((item) => {
+            const Icon = item.icon;
+            const isActive = activeTab === item.id;
+            const isCreate = item.id === "create";
+
+            return (
+              <button
+                key={item.id}
+                onClick={() => {
+                  if (isCreate) {
+                    setShowCreateModal(true);
+                  } else {
+                    setActiveTab(item.id);
+                  }
+                }}
+                className={`flex flex-col items-center justify-center py-2 px-1 rounded-lg transition-all touch-target ${
+                  isCreate
+                    ? 'bg-gradient-to-r from-blue-500 to-purple-600 text-white shadow-lg'
+                    : isActive
+                    ? 'bg-blue-50 text-blue-600'
+                    : 'text-gray-600 hover:text-gray-900 hover:bg-gray-50'
+                }`}
+              >
+                <Icon className={`h-5 w-5 mb-1 ${isCreate ? 'text-white' : ''}`} />
+                <span className={`text-xs font-medium ${isCreate ? 'text-white' : ''}`}>
+                  {item.label}
+                </span>
+              </button>
+            );
+          })}
+        </div>
       </div>
 
       {/* Overlay for mobile sidebar */}

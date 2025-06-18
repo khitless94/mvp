@@ -264,7 +264,6 @@ export type Database = {
           name: string
           email: string
           country: string
-          contact_number: string | null
           created_at: string
           updated_at: string
         }
@@ -273,7 +272,6 @@ export type Database = {
           name: string
           email: string
           country: string
-          contact_number?: string | null
           created_at?: string
           updated_at?: string
         }
@@ -282,7 +280,6 @@ export type Database = {
           name?: string
           email?: string
           country?: string
-          contact_number?: string | null
           created_at?: string
           updated_at?: string
         }

@@ -35,9 +35,9 @@ END;
 $$ language 'plpgsql';
 
 -- Create trigger to automatically update updated_at
-CREATE TRIGGER update_waitlist_updated_at 
-    BEFORE UPDATE ON public.waitlist 
-    FOR EACH ROW 
+CREATE TRIGGER update_waitlist_updated_at
+    BEFORE UPDATE ON public.waitlist
+    FOR EACH ROW
     EXECUTE FUNCTION update_updated_at_column();
 
 -- Grant permissions
