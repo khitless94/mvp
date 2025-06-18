@@ -828,11 +828,11 @@ const LandingPage: React.FC = () => {
 
         <div className="container-responsive relative z-10">
           <div className="text-center mb-16">
-            <div className="flex items-center justify-center mb-6">
-              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-lg mr-4 animate-pulse">
+            <div className="flex flex-col sm:flex-row items-center justify-center mb-6 space-y-4 sm:space-y-0">
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-red-500 rounded-2xl flex items-center justify-center shadow-lg sm:mr-4 animate-pulse">
                 <span className="text-3xl">🚀</span>
               </div>
-              <h2 className="text-4xl font-bold bg-gradient-to-r from-gray-900 via-purple-900 to-blue-900 bg-clip-text text-transparent">
+              <h2 className="text-3xl sm:text-4xl font-bold bg-gradient-to-r from-gray-900 via-purple-900 to-blue-900 bg-clip-text text-transparent text-center sm:text-left">
                 Social media has evolved. Have you?
               </h2>
             </div>
