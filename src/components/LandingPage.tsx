@@ -643,11 +643,11 @@ const LandingPage: React.FC = () => {
         <div className="container-responsive relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div>
-              <div className="flex flex-col sm:flex-row items-start sm:items-center mb-6 space-y-3 sm:space-y-0">
+              <div className="flex flex-col sm:flex-row items-center sm:items-center mb-6 space-y-3 sm:space-y-0">
                 <div className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center sm:mr-4 shadow-lg">
                   <Wand2 className="w-6 h-6 text-white" />
                 </div>
-                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 via-purple-900 to-pink-900 bg-clip-text text-transparent">
+                <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-gray-900 via-purple-900 to-pink-900 bg-clip-text text-transparent text-center sm:text-left">
                   Write your content using AI.
                 </h2>
               </div>
